@@ -126,8 +126,20 @@
   </div>
 </section>
 </template>
-<script src="https://telegram.org/js/telegram-web-app.js">
-let tg = window.Telegram.WebApp;
+<script>
+<script>
+  export default {
+    head() {
+      return {
+        script: [
+          {
+            src: 'https://code.jquery.com/jquery-3.5.1.min.js'
+          }
+        ],
+      }
+    }
+  }
+	let tg = window.Telegram.WebApp;
 tg.expand();
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2cab37";
@@ -174,4 +186,5 @@ p.innerText = `${tg.initDataUnsafe.user.first_name}
 ${tg.initDataUnsafe.user.last_name}`;
 usercard.appendChild(p); 
 </script>
+
 
