@@ -118,8 +118,8 @@
                       <span>Free updates: <span class="font-semibold">36 months</span></span>
                   </li>
               </ul>
-              <button id="btn3" class="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">Get started</button>
-		  <div class="fixed" id="usercard">123</div>
+              <button id="btn3" class="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-primary-900">Get started</button>
+	      <div class="fixed text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-primary-900" id="usercard">123</div>
           </div>
 	       
       </div>
@@ -137,6 +137,7 @@ let btn1 = document.getElementById("btn1");
 let btn2 = document.getElementById("btn2");
 let btn3 = document.getElementById("btn3");
 btn1.addEventListener("click", function(){
+	console.log("new")
 	if (tg.MainButton.isVisible) {
 		tg.MainButton.hide();
 	}
