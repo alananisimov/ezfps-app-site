@@ -104,10 +104,11 @@
 
   const updateuser = async () => {
     
-    
-const { data, error } = await supabase.auth.updateUser({
-  data: { name: username, full_name: username }
-})
+if (name || full_name != null){
+    const { data, error } = await supabase.auth.updateUser({
+    data: { name: username, full_name: username }
+    })
+}
 console.log(user.user_metadata.name)
 }
 
