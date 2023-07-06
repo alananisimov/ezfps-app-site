@@ -76,7 +76,7 @@
 const { data, error } = await supabase.auth.signInWithOAuth({
   provider: 'google',
   options: {
-        redirectTo: "http://localhost:3000/"
+        redirectTo: "https://vercel-ivory-nine.vercel.app/"
       }
 })
 const { data: sessiondata, error: sessionerror } = await supabase.auth.refreshSession()
@@ -87,7 +87,7 @@ const { session, user } = data
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'github',
       options: {
-        redirectTo: "http://localhost:3000/"
+        redirectTo: "https://vercel-ivory-nine.vercel.app//"
       }
     })
     const { data: sessiondata, error: sessionerror } = await supabase.auth.refreshSession()
