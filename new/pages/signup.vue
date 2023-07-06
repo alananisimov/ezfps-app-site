@@ -73,7 +73,7 @@
         email: email.value, 
         password: password.value,
         options: {
-        emailRedirectTo: 'http://localhost:3000/signin'
+        emailRedirectTo: 'https://vercel-ivory-nine.vercel.app/'
         }
         })
       if (error) throw error
