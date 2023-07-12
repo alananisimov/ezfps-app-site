@@ -1,3 +1,3 @@
 <template>
-    <p>You can close that page123</p>
+    <p>You can 123close that page123</p>
 </template>
