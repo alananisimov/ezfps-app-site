@@ -62,7 +62,7 @@
                 <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" />
               </DisclosureButton>
             <button id="btn_left">
-                <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                <svg class="w-5 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M1 1h16"/>
   </svg>
              </button>
