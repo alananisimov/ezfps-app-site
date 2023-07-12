@@ -77,7 +77,10 @@ const { data, error } = await supabase.auth.signInWithOAuth({
   provider: 'google',
   options: {
         redirectTo: "https://vercel-ivory-nine.vercel.app/",
-        skipBrowserRedirect: true  
+          queryParams: {
+              access_type: 'offline',
+              prompt: 'consent',
+        },
       }
 })
 const { data: sessiondata, error: sessionerror } = await supabase.auth.refreshSession()
