@@ -14,7 +14,14 @@ import { initFlowbite } from 'flowbite'
 onMounted(() => {
     initFlowbite();
 })
-
+const nuxtApp = useNuxtApp();
+  const loading = ref(false);
+  nuxtApp.hook("page:start", () => {
+    loading.value = true;
+  });
+  nuxtApp.hook("page:finish", () => {
+    loading.value = false;
+  });
 </script>
 <style>
 
