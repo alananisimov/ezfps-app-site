@@ -6,7 +6,7 @@
         <div class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5 ">
             <succesmodal/>
             <errormodal/>
-            <form action="#" id="settingsform">
+            <form id="settingsform">
                 <!-- Modal header -->
                 <div class="flex justify-between mb-4 rounded-t sm:mb-5">
                     <div class="text-lg text-gray-900 md:text-xl dark:text-white">
