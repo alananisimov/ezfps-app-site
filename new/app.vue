@@ -1,8 +1,8 @@
 <template>
-<div class="h-screen">
+
   <NavBar/>
   <NuxtPage/>
-</div>
+
 
 </template>
 <script setup lang="ts">
