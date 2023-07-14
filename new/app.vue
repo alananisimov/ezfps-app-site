@@ -1,9 +1,9 @@
 <template>
 
-  <NuxtLayout>
+
   <NavBar/>
   <NuxtPage/>
-  </NuxtLayout>
+
 
 </template>
 <script setup lang="ts">
