@@ -1,6 +1,6 @@
 <template>
 <div class="h-screen">
-  <div v-if="loading" class="fixed left-0 top-0 h-0.5 w-full z-50 bg-green-500" />
+  <div class="fixed left-0 top-0 h-0.5 w-full z-50 bg-green-500" />
   <NavBar/>
   <NuxtPage/>
 </div>
@@ -10,12 +10,13 @@
 import { onMounted } from 'vue'
 import { initFlowbite } from 'flowbite'
 
+let loading = ref(false);
 // initialize components based on data attribute selectors
 onMounted(() => {
     initFlowbite();
 })
 const nuxtApp = useNuxtApp();
-  const loading = ref(false);
+
   nuxtApp.hook("page:start", () => {
     loading.value = true;
   });
