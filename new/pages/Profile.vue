@@ -111,3 +111,23 @@ console.log(user.user_metadata.name)
 }
 
 </script>
+<script>
+const form = document.getElementById('settingsform');
+
+form.addEventListener('submit', (event) => {
+  const radioInputs = form.elements.mode;
+  let isOptionSelected = false;
+
+  for (let i = 0; i < radioInputs.length; i++) {
+    if (radioInputs[i].checked) {
+      isOptionSelected = true;
+      break;
+    }
+  }
+
+  if (!isOptionSelected) {
+    event.preventDefault();
+    alert('Выберите хотя бы одну опцию!');
+  }
+});
+</script>
