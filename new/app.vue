@@ -1,10 +1,5 @@
 <template>
-<head>
-  <script src="
-https://cdn.jsdelivr.net/npm/electron@25.3.0/index.min.js
-"></script>
 
-</head>
   <NavBar/>
   <NuxtPage/>
 
