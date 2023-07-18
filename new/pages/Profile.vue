@@ -6,7 +6,7 @@
         <div class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5 ">
             <succesmodal/>
             <errormodal/>
-            <form id="settingsform">
+            <form id="settingsform" @submit.prevent="handleSubmit">
                 <!-- Modal header -->
                 <div class="flex justify-between mb-4 rounded-t sm:mb-5">
                     <div class="text-lg text-gray-900 md:text-xl dark:text-white">
@@ -58,7 +58,7 @@
                 <div class="flex justify-between items-center mt-8">
                     
                     <div class="flex items-center space-x-3 sm:space-x-4">
-                        <button type="submit" class="text-white inline-flex items-center bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                        <button type="submit" @click="" class="text-white inline-flex items-center bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                             <svg aria-hidden="true" class="mr-1 -ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path></svg>
                             Save
                         </button>               
@@ -84,9 +84,9 @@
 </div>
 </template>
 <script setup>
-
+  import { IpcRenderer } from "electron"
   let username = ref('')
-  
+  let form = {dota_path: '', cs_path: ''}
   let roleValue = ref('')
   const supabase = useSupabaseClient()
   const { data: { user } } = await supabase.auth.getUser()
@@ -94,7 +94,14 @@
   let { data: user_role_data, error } = await supabase
   .from('profiles')
   .select('role')
+  handleSubmit = async function() {
+    const formData = new FormData();
 
+    for (let [key, value] of Object.entries(this.form)) {
+        formData.append(key, value);
+    }
+    ipcRenderer.send('form-submit', formData);
+}
   // проверяем, что есть данные в user_role
 
     // получаем значение ячейки роли
