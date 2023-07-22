@@ -100,10 +100,11 @@ const { session, user } = data
         email: email.value, 
         password: password.value,
         
-    }, })
+       }) 
       if (error) throw error
       alert('Succesful signIn')
-    } catch (error) {
+    }
+     catch (error) {
       newerror.value = true
       errortext.value = error.error_description || error.message
     } finally {
