@@ -1,8 +1,8 @@
 <template>
-
+<div id="scrollbar">
   <NavBar/>
   <NuxtPage/>
-
+</div>
 
 </template>
 <script setup lang="ts">
@@ -16,5 +16,13 @@ onMounted(() => {
 
 </script>
 <style>
+.scrollbar::-webkit-scrollbar {
+  display: none;
+}
 
+
+.scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 </style>
