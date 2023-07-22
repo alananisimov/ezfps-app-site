@@ -84,7 +84,6 @@
 </div>
 </template>
 <script setup>
-  import { IpcRenderer } from "electron"
   let username = ref('')
 
   const supabase = useSupabaseClient()
