@@ -86,23 +86,14 @@
 <script setup>
   import { IpcRenderer } from "electron"
   let username = ref('')
-  let dota_path = ref('')
-  let cs_path = ref('')
-  let roleValue = ref('')
+
   const supabase = useSupabaseClient()
   const { data: { user } } = await supabase.auth.getUser()
   username = user.user_metadata.name
   let { data: user_role_data, error } = await supabase
   .from('profiles')
   .select('role')
-  handleSubmit = async function() {
-    const formData = new FormData();
-
-    for (let [key, value] of Object.entries(this.form)) {
-        formData.append(key, value);
-    }
-    ipcRenderer.send('form-submit', formData);
-}
+  
   // проверяем, что есть данные в user_role
 
     // получаем значение ячейки роли
