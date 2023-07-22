@@ -11,13 +11,13 @@
                 <div class="flex justify-between mb-4 rounded-t sm:mb-5">
                     <div class="text-lg text-gray-900 md:text-xl dark:text-white">
                         <h3 class="font-semibold ">
-                            Account Info:
+                            Информация об аккаунте:
                         </h3>
                         <p v-if="user" class="font-bold" >
                             {{ user.email}}
                         </p>
                         <p v-if="!user" class="font-bold" >
-                            User's Email
+                            Ваш e-mail
                         </p>
                     </div>
                     <div>
@@ -31,7 +31,7 @@
                 </div>
                 <dl>
                     
-                    <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Role</dt>
+                    <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Статус</dt>
                     <div class="relative mb-4">
                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -41,7 +41,7 @@
                     <input disabled="true" type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="roleValue">
                     </div>
 
-                    <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Name</dt>
+                    <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Имя</dt>
                     <div class="flex">
                     <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
                         @
@@ -60,7 +60,7 @@
                     <div class="flex items-center space-x-3 sm:space-x-4">
                         <button type="submit" @click="" class="text-white inline-flex items-center bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                             <svg aria-hidden="true" class="mr-1 -ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path></svg>
-                            Save
+                            Сохранить
                         </button>               
                         
                      
@@ -69,13 +69,13 @@
                         <svg class="w-5 h-5 mr-1.5 -ml-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 10 2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
   </svg>
-                        Run 
+                        Запуск 
                     </button>
                     <button v-else type="button" id="errorButton" data-modal-toggle="errorModal" class="inline-flex items-center text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-900">
                         <svg class="w-5 h-5 mr-1.5 -ml-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 10 2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
   </svg>
-                        Run 
+                        Запуск 
                     </button>
                 </div>
             </form>
@@ -86,7 +86,8 @@
 <script setup>
   import { IpcRenderer } from "electron"
   let username = ref('')
-  let form = {dota_path: '', cs_path: ''}
+  let dota_path = ref('')
+  let cs_path = ref('')
   let roleValue = ref('')
   const supabase = useSupabaseClient()
   const { data: { user } } = await supabase.auth.getUser()

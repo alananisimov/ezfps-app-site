@@ -8,15 +8,15 @@
      <div class="mx-auto max-w-2xl py-8 sm:py-24 lg:py-14">
        <div class="hidden sm:mb-8 sm:flex sm:justify-center">
          <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-           Announcing our next round of funding. <a href="#" class="font-semibold text-indigo-600" ><span class="absolute inset-0" aria-hidden="true" />Read more <span aria-hidden="true">&rarr;</span></a>
+          Объявляем о следующем раунде финансирования. <a href="#" class="font-semibold text-indigo-600" ><span class="absolute inset-0" aria-hidden="true" />Подробнее <span aria-hidden="true">&rarr;</span></a>
          </div>
        </div>
        <div class="text-center">
-         <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Boost your PC without routine</h1>
-         <p class="mt-6 text-lg leading-8 text-gray-600">Are you tired of sluggish performance and frustrating lags on your PC? Upgrade your computing experience with our exclusive subscription service designed to optimize your system and supercharge its performance. </p>
+         <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Оптимизируй свой ПК без проблем</h1>
+         <p class="mt-6 text-lg leading-8 text-gray-600">Вы устали от низкой производительности и неприятных лагов на вашем ПК? Улучшите свои вычислительные возможности с помощью нашей эксклюзивной службы подписки, предназначенной для оптимизации вашей системы и повышения ее производительности.</p>
          <div class="mt-10 flex items-center justify-center gap-x-6">
            <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
-           <a href="#" class="text-sm font-semibold leading-6 text-gray-900" id="learn">Learn more <span aria-hidden="true">→</span></a>
+           <a href="#" class="text-sm font-semibold leading-6 text-gray-900" id="learn">Подробнее <span aria-hidden="true">→</span></a>
          </div>
        </div>
      </div>

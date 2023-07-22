@@ -78,10 +78,10 @@
         <DisclosurePanel class="md:hidden">
           <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
             <NuxtLink to="/">
-            <DisclosureButton :key="Home" as="a" :class="[true ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block rounded-md px-3 py-2 text-base font-medium']" :aria-current="true ? 'page' : undefined">Home</DisclosureButton>
+            <DisclosureButton :key="Home" as="a" :class="[true ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block rounded-md px-3 py-2 text-base font-medium']" :aria-current="true ? 'page' : undefined">Главная</DisclosureButton>
             </NuxtLink>
             <NuxtLink to="/subscribtion">
-            <DisclosureButton :key="Subscribtion" as="a" :class="[false ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block rounded-md px-3 py-2 text-base font-medium']" :aria-current="false ? 'page' : undefined">Subscribtion</DisclosureButton>
+            <DisclosureButton :key="Subscribtion" as="a" :class="[false ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block rounded-md px-3 py-2 text-base font-medium']" :aria-current="false ? 'page' : undefined">Подписки</DisclosureButton>
             </NuxtLink>
           </div>
           <div class="border-t border-gray-700 pb-3 pt-4">
@@ -92,22 +92,19 @@
               </div>
               <div class="ml-3">
                 <div v-if="user" class="text-base font-medium leading-none text-white">{{ user.email }}</div>
-                <div v-if="!user" class="text-base font-medium leading-none text-white">Please Login</div>
+                <div v-if="!user" class="text-base font-medium leading-none text-white">Пожалуйста войдите</div>
               </div>
-              <button type="button" class="ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                <span class="sr-only">View notifications</span>
-                <BellIcon class="h-6 w-6" aria-hidden="true" />
-              </button>
+              
             </div>
             <div class="mt-3 space-y-1 px-2">
                 <NuxtLink to="/signin">
-                <DisclosureButton v-if="!user" :key="Login" as="a" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Sign In</DisclosureButton>
+                <DisclosureButton v-if="!user" :key="Login" as="a" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Войти</DisclosureButton>
                 </NuxtLink>
             <NuxtLink to="/profile">
-            <DisclosureButton v-if="user" :key="Profile" as="a" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Account & App Settings</DisclosureButton>
+            <DisclosureButton v-if="user" :key="Profile" as="a" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Запуск</DisclosureButton>
         </NuxtLink>
             
-            <DisclosureButton v-if="user" :key="Logout" @click="SignOut" as="a" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Sign Out</DisclosureButton>
+            <DisclosureButton v-if="user" :key="Logout" @click="SignOut" as="a" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Выйти</DisclosureButton>
            
             </div>
           </div>
@@ -140,7 +137,7 @@ async function SignOut(){
       'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   }
   const navigation = [
-    { name: 'Dashboard', href: '#', current: true },
+    { name: '', href: '#', current: true },
     { name: 'Team', href: '#', current: false },
     { name: 'Projects', href: '#', current: false },
     { name: 'Calendar', href: '#', current: false },

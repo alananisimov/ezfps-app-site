@@ -6,7 +6,7 @@
           <DisclosureButton
             class="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-orange-500 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
           >
-            <span>Advanced Settings</span>
+            <span>Дополнительные настройки</span>
             <ChevronUpIcon
               :class="open ? 'rotate-180 transform' : ''"
               class="h-5 w-5 text-orange-500"
@@ -27,20 +27,20 @@
            
                 <div class="grid gap-4 mb-4">
                     <div>
-                        <label for="dotapath" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">dota 2 Path</label>
-                        <input v-model="form.dota_path" type="text" name="dota_path" id="dotapath" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="C:\Program Files (x86)\Steam\steamapps\common\dota 2 beta">
+                        <label for="dotapath" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Путь к Dota 2</label>
+                        <input v-model="dota_path" type="text" name="dota_path" id="dotapath" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="C:\Program Files (x86)\Steam\steamapps\common\dota 2 beta">
                     </div>
                     <div>
-                        <label for="cspath" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">cs-go Path</label>
-                        <input v-model="form.cs_path" type="text" name="cs_path" id="cspath" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive">
+                        <label for="cspath" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Путь к csgo</label>
+                        <input v-model="cs_path" type="text" name="cs_path" id="cspath" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive">
                     </div>
-                    <label class="block text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload custom config</label>
+                    <label class="block text-sm font-medium text-gray-900 dark:text-white" for="file_input">Загрузить кастомный конфиг (beta)</label>
 <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file">
-<p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
-<button type="button" @click="UploadConfig" class=" flex px-3 py-2 text-xs font-medium text-center text-white bg-orange-700 rounded-lg hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Upload config</button>
+<p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">only json format</p>
+<button type="button" @click="UploadConfig" class=" flex px-3 py-2 text-xs font-medium text-center text-white bg-orange-700 rounded-lg hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Загрузить</button>
                     
                     <div class="">
-                        <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">User Info</label>
+                        <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Дополнительная информация о юзере</label>
                         <textarea disabled="true" id="description" rows="5" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Write a description...">{{ user }}</textarea>                    
                     </div>
                 </div>
