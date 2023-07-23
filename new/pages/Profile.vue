@@ -92,11 +92,11 @@
   let { data: user_role_data, error } = await supabase
   .from('profiles')
   .select('role')
-  
+  .eq('email', user.email)
   // проверяем, что есть данные в user_role
 
     // получаем значение ячейки роли
-    roleValue = user_role_data[0].role | null;
+    roleValue = user_role_data[0].role;
 
   const updateuser = async () => {
     
