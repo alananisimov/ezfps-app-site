@@ -28,11 +28,11 @@
                 <div class="grid gap-4 mb-4">
                     <div>
                         <label for="dotapath" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Путь к Dota 2</label>
-                        <input type="text" name="dota_path" id="dotapath" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="C:\Program Files (x86)\Steam\steamapps\common\dota 2 beta">
+                        <input type="text" name="dota_path" id="dotapath" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="C:/Program Files (x86)/Steam/steamapps/common/dota 2 beta">
                     </div>
                     <div>
                         <label for="cspath" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Путь к csgo</label>
-                        <input type="text" name="cs_path" id="cspath" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive">
+                        <input type="text" name="cs_path" id="cspath" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive">
                     </div>
                     <label class="block text-sm font-medium text-gray-900 dark:text-white" for="file_input">Загрузить кастомный конфиг (beta)</label>
 <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file">
