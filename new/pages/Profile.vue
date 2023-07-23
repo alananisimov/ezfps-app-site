@@ -85,7 +85,7 @@
 </template>
 <script setup>
   let username = ref('')
-
+  let roleValue = ref('')
   const supabase = useSupabaseClient()
   const { data: { user } } = await supabase.auth.getUser()
   username = user.user_metadata.name
@@ -93,11 +93,11 @@
   .from('profiles')
   .select('role')
   .eq('email', user.email)
-  // проверяем, что есть данные в user_role
-
-    // получаем значение ячейки роли
-    roleValue = user_role_data[0].role;
-
+ 
+   roleValue = user_role_data[0];
+   print(roleValue)
+   print(user.email)
+ 
   const updateuser = async () => {
     
 
