@@ -95,8 +95,8 @@
   .eq('email', user.email)
  
    roleValue = user_role_data[0];
-   print(roleValue)
-   print(user.email)
+   console.log(roleValue)
+   console.log(user.email)
  
   const updateuser = async () => {
     
