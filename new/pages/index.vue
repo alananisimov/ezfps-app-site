@@ -30,7 +30,7 @@
          <p class="row-span-2 col-span-2">{{user.email}}</p>
       </div>
         
-<div className="grid grid-cols-3 grid-rows-2 gap-4">
+<div class="grid grid-cols-3 grid-rows-2 gap-4">
     <div >Статус</div>
     <div >Активен</div>
     <div >Версия</div>
