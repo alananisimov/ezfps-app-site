@@ -69,7 +69,7 @@
         password: password.value
         })
       if (error) throw error
-      alert('Succesful signUp')
+      navigateTo("/")
       emailverification.value = true
     } catch (error) {
       newerror.value = true
