@@ -36,10 +36,10 @@
 <div class="grid grid-cols-3 grid-rows-2 gap-4 -mt-10">
     <div >Статус</div>
     <div >Активен</div>
-    <div >Версия</div>
-    <div >1.0 beta</div>
     <div >Ваш TG ID</div>
     <div >xxxxxxxxx</div>
+    <div >Версия</div>
+    <div> 1.0 beta</div>
 </div>
 
          <div class="mt-10 flex items-center justify-center gap-x-6">
