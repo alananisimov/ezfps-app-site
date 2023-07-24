@@ -17,7 +17,7 @@
               </div>
               <div class="">
                 <div class="ml-2 flex items-center space-x-4 text-white text-xl text-center ">
-                  <h1>ezfps</h1>
+                  <h1>EZFPS</h1>
                 </div>
               </div>
             </div>
