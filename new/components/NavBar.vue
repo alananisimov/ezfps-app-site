@@ -8,7 +8,7 @@
       ```
     -->
     <div class="min-h-full ">
-      <Disclosure as="nav" class="bg-gray-800" v-slot="{ open }">
+      <Disclosure as="nav" class="bg-[#18191B]" v-slot="{ open }">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="flex h-12 items-center justify-between">
             <div class="flex items-center">
@@ -16,7 +16,7 @@
                 <img class="h-7 w-7" src="https://i.ibb.co/F34tqJT/logo.png" alt="Your Company" />
               </div>
               <div class="">
-                <div class="ml-10 flex items-center space-x-4 text-white text-2xl text-center ">
+                <div class="ml-2 flex items-center space-x-4 text-white text-2xl text-center ">
                   <h1>ezfps</h1>
                 </div>
               </div>
