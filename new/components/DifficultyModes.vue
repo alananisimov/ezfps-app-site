@@ -3,7 +3,7 @@
                     <ul class="grid w-full gap-6 grid-cols-3">
                         <li>
                             <input name="mode" type="radio" id="easy-option" value="peaceful" class="hidden peer">
-                            <label for="easy-option" class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">                           
+                            <label for="easy-option" class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 h-[200px]">                           
                                 <div class="block">
                                     <img class="mb-2 w-7 h-7" src="https://i.ibb.co/jkSX1v3/low-signal.png">
                                     <div class="w-full text-lg font-semibold">Минимальная</div>
@@ -13,7 +13,7 @@
                         </li>
                         <li>
                             <input name="mode" type="radio" id="medium-option" value="medium" class="hidden peer">
-                            <label for="medium-option" class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <label for="medium-option" class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 h-[200px]">
                                 <div class="block">
                                     <img class="mb-2 w-7 h-7" src="https://i.ibb.co/KKsnZNK/mobile-signal.png">
                                     <div class="w-full text-lg font-semibold">Средняя</div>
@@ -23,7 +23,7 @@
                         </li>
                         <li>
                             <input name="mode" type="radio" id="hard-option" value="hard" class="hidden peer">
-                            <label for="hard-option" class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <label for="hard-option" class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 h-[200px]">
                                 <div class="block">
                                     <img class="mb-2 w-7 h-7" src="https://i.ibb.co/gWXgCz3/high-signal.png">
                                     <div class="w-full text-lg font-semibold">Сильная</div>
