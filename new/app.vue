@@ -20,6 +20,6 @@ onMounted(() => {
     display: none;
 }
 html{
-font-family: 'Varela Round', sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 </style>

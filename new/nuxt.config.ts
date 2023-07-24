@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     head : {
       link: [{
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Varela+Round&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap",
       },]
     }
   },
