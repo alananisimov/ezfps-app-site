@@ -28,7 +28,7 @@
 </svg>
          <h1 v-if="user.name" class="font-2xl font-bold tracking-tight text-gray-900 dark:text-gray-900 col-span-2">{{user.name}}</h1>
          <p class="row-span-2 col-span-2">{{user.email}}</p>
-        </div>
+      </div>
         
 <div className="grid grid-cols-3 grid-rows-2 gap-4">
     <div >Статус</div>
@@ -56,4 +56,4 @@
 
 <script setup>
 const { data: { user } } = await supabase.auth.getUser()
-<script>
+</script>
