@@ -8,9 +8,10 @@
       ```
     -->
     <div class="min-h-full ">
-      <Disclosure as="nav" class="bg-[#18191B]" v-slot="{ open }">
+      <Disclosure as="nav" class="bg-[#18191B]" v-slot="{ open }" style="-webkit-app-region: drag">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="flex h-12 items-center justify-between">
+            
             <div class="flex items-center">
               <div class="flex-shrink-0">
                 <img class="h-7 w-7" src="https://i.ibb.co/F34tqJT/logo.png" alt="Your Company" />
@@ -29,12 +30,13 @@
                 
               </div>
             </div>
+          
             <div class="-mr-2 flex">
               
-            <div class="inline-flex items-center space-x-4 text-gray-400">
+            <div class="inline-flex items-center space-x-4 text-gray-400" style="-webkit-app-region: no-drag;">
                 
               <!-- Mobile menu button -->
-              
+            
             <button id="btn_left">
                 <svg class="w-5 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" viewBox="0 0 18 2">
     <path stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M1 1h16"/>
