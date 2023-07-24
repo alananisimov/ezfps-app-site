@@ -37,9 +37,9 @@
                         <label for="terms" class="font-light text-gray-500 dark:text-gray-300">Я принимаю <a class="font-medium text-primary-600 hover:underline dark:text-primary-500" href="#">Правила и соглашения</a></label>
                       </div>
                   </div>
-                  <button type="submit" class="w-full text-white bg-orange-600 hover:bg-orange-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Войти</button>
+                  <button type="submit" class="w-full text-white bg-orange-600 hover:bg-orange-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" href="/">Войти</button>
                   <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                      Нет аккаунта? <NuxtLink to="/signup"><a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Зарегистрируйтесь</a></NuxtLink>
+                      Нет аккаунта? <NuxtLink to="/signup"><a class="font-medium text-primary-600 hover:underline dark:text-primary-500">Зарегистрируйтесь</a></NuxtLink>
                   </p>
               </form>
           </div>
@@ -86,7 +86,6 @@ const { session, user } = data
       }
        }) 
       if (error) throw error
-      alert('Succesful signIn')
     }
      catch (error) {
       newerror.value = true
