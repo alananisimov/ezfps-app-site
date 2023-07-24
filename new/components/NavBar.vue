@@ -68,7 +68,7 @@
 async function SignOut(){
   const { error: signout } = await supabase.auth.signOut()
   console.log("signout")
-  navigateTo('/')
+  navigateTo('/signin')
 }
   const { data: { user } } = await supabase.auth.getUser()
   const user1 = {
