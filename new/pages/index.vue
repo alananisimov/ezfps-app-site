@@ -33,7 +33,7 @@
 </div>
       </div>
         
-<div class="grid grid-cols-3 grid-rows-2 gap-4 text-start">
+<div class="grid grid-cols-3 grid-rows-2 gap-4 -mt-10">
     <div >Статус</div>
     <div >Активен</div>
     <div >Версия</div>
