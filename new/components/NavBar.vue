@@ -39,7 +39,7 @@
             
             <button id="btn_left">
                 <svg class="w-5 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" viewBox="0 0 18 2">
-    <path stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M1 1h16"/>
+    <path stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
   </svg>
              </button>
              <button v-if="session != null" id="btn_log_out" @click="SignOut">
