@@ -68,6 +68,7 @@
         email: email.value, 
         password: password.value
         })
+        
       if (error) throw error
       navigateTo("/")
       emailverification.value = true
