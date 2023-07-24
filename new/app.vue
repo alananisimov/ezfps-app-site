@@ -19,4 +19,7 @@ onMounted(() => {
 ::-webkit-scrollbar {
     display: none;
 }
+html{
+font-family: 'Varela Round', sans-serif;
+}
 </style>
