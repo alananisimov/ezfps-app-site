@@ -55,5 +55,6 @@
 </template>
 
 <script setup>
+  const supabase = useSupabaseClient()
 const { data: { user } } = await supabase.auth.getUser()
 </script>
