@@ -26,9 +26,11 @@
 	<path fill="#F9EBB2" d="M23.999,16c0-4.418,3.586-8,8-8c4.422,0,8,3.582,8,8v8c0,4.418-3.578,8-8,8c-4.414,0-8-3.582-8-8V16z"/>
 </g>
 </svg>
+<div class="text-left">
          <h1 v-if="user.name" class="font-6xl font-bold tracking-tight text-gray-900 dark:text-gray-900 col-span-2">{{user.name}}</h1>
          <h1 v-if="!user.name" class="font-6xl font-bold tracking-tight text-gray-900 dark:text-gray-900 col-span-2">Account</h1>
          <p class="row-span-2 col-span-2">{{user.email}}</p>
+</div>
       </div>
         
 <div class="grid grid-cols-3 grid-rows-2 gap-4">
