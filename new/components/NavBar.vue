@@ -10,7 +10,7 @@
     <div class="min-h-full ">
       <Disclosure as="nav" class="bg-gray-800" v-slot="{ open }">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div class="flex h-16 items-center justify-between">
+          <div class="flex h-12 items-center justify-between">
             <div class="flex items-center">
               <div class="flex-shrink-0">
                 <img class="h-7 w-7" src="https://i.ibb.co/F34tqJT/logo.png" alt="Your Company" />
