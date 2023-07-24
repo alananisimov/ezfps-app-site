@@ -21,7 +21,7 @@
                 </div>
               </div>
             </div>
-            <div class="hidden md:block">
+            <div class="">
               <div class="ml-4 flex items-center md:ml-6">
                 
   
@@ -29,7 +29,7 @@
                 
               </div>
             </div>
-            <div class="-mr-2 flex md:hidden">
+            <div class="-mr-2 flex">
               
             <div class="inline-flex items-center space-x-4 text-gray-400">
                 
