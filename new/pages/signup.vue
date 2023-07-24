@@ -66,7 +66,7 @@
       loading.value = true
       const { error } = await supabase.auth.signUp({ 
         email: email.value, 
-        password: password.value
+        password: password.value,
         options: {
         redirectTo: "https://vercel-ivory-nine.vercel.app/",
       }
