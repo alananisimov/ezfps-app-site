@@ -77,7 +77,7 @@
 const { data, error } = await supabase.auth.signInWithOAuth({
   provider: 'google',
   options: {
-        redirectTo: "https://vercel-ivory-nine.vercel.app",
+        redirectTo: "https://launcher.ezfps.store/",
       }
 })
 const { data: sessiondata, error: sessionerror } = await supabase.auth.refreshSession()
@@ -88,7 +88,7 @@ const { session, user } = data
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'github',
       options: {
-        redirectTo: "https://vercel-ivory-nine.vercel.app"
+        redirectTo: "https://launcher.ezfps.store/"
       }
     })
     const { data: sessiondata, error: sessionerror } = await supabase.auth.refreshSession()
