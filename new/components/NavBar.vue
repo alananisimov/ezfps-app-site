@@ -16,7 +16,7 @@
                 <img class="h-7 w-7" src="https://i.ibb.co/F34tqJT/logo.png" alt="Your Company" />
               </div>
               <div class="">
-                <div class="ml-10 flex items-baseline space-x-4 text-white text-2xl">
+                <div class="ml-10 flex items-baseline space-x-4 text-white text-2xl ">
                   <h1>ezfps</h1>
                 </div>
               </div>
