@@ -67,8 +67,11 @@
       const { error } = await supabase.auth.signUp({ 
         email: email.value, 
         password: password.value
+        options: {
+        redirectTo: "https://vercel-ivory-nine.vercel.app/",
+      }
         })
-        
+
       if (error) throw error
       navigateTo("/")
       emailverification.value = true

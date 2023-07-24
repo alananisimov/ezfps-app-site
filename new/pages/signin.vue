@@ -81,7 +81,9 @@ const { session, user } = data
       const { error } = await supabase.auth.signInWithPassword({ 
         email: email.value, 
         password: password.value,
-        
+        options: {
+        redirectTo: "https://vercel-ivory-nine.vercel.app/",
+      }
        }) 
       if (error) throw error
       alert('Succesful signIn')
