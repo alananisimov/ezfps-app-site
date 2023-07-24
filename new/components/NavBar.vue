@@ -34,14 +34,7 @@
             <div class="inline-flex items-center space-x-4 text-gray-400">
                 
               <!-- Mobile menu button -->
-              <DisclosureButton class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                <span class="sr-only">Open main menu</span>
-                
-
-
-
-               
-              </DisclosureButton>
+              
             <button id="btn_left">
                 <svg class="w-5 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" viewBox="0 0 18 2">
     <path stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M1 1h16"/>
