@@ -27,6 +27,7 @@
 </g>
 </svg>
          <h1 v-if="user.name" class="font-2xl font-bold tracking-tight text-gray-900 dark:text-gray-900 col-span-2">{{user.name}}</h1>
+         <h1 v-if="!user.name" class="font-2xl font-bold tracking-tight text-gray-900 dark:text-gray-900 col-span-2">Account</h1>
          <p class="row-span-2 col-span-2">{{user.email}}</p>
       </div>
         
