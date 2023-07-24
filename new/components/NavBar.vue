@@ -16,7 +16,7 @@
                 <img class="h-7 w-7" src="https://i.ibb.co/F34tqJT/logo.png" alt="Your Company" />
               </div>
               <div class="">
-                <div class="ml-2 flex items-center space-x-4 text-white text-xl text-center ">
+                <div class="ml-2 flex items-center space-x-4 text-white text-lg text-center ">
                   <h1>EZFPS</h1>
                 </div>
               </div>
