@@ -7,7 +7,7 @@
      </div>
      <div class="mx-auto max-w-2xl py-8 sm:py-24 lg:py-14 flex items-center space-x-4 rounded-[60px]">
        
-       <div class="text-center p-8 rounded-xl shadow-2xl">
+       <div class="text-center p-8 bg-white">
         <div class="grid grid-rows-3 grid-flow-col gap-4">
     
   
