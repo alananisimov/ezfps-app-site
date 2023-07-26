@@ -70,8 +70,7 @@
   let cs_path = ref('C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive')
   let mode = ref('')
   const supabase = useSupabaseClient()
-  const get_form = (event) => {
-    event.preventDefault();
+  const get_form = acync (event) => {
     const myFormData = new FormData(event.target);
 
     const formDataObj = {};
