@@ -34,10 +34,12 @@
                     </ul>
 </template>
 <script setup>
-export let mode = { ref('') };
 function changemode(new_mode){
     console.log(new_mode);
     mode = new_mode;
 }
 
+</script>
+<script>
+export let mode = { ref('') };
 </script>
