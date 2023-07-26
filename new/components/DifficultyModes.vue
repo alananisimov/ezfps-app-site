@@ -33,9 +33,10 @@
                         </li>
                     </ul>
 </template>
-<script>
-let mode = ref('');
+<script setup>
 function changemode(new_mode){
     console.log(new_mode);
 }
+let mode = ref('');
+
 </script>
