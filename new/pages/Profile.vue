@@ -71,10 +71,11 @@
   let mode = ref('')
   const supabase = useSupabaseClient()
   async function get_form(event){
-    const myFormData = new FormData(event.target);
 
     const formDataObj = {};
-    myFormData.forEach((value, key) => (formDataObj[key] = value));
+    formDataObj["mode"] = mode.value
+    formDataObj["dota_path"] = dota_path.value
+    formDataObj["cs_path"] = cs_path.value
     console.log(formDataObj);
     electronAPI.form_submit(formDataObj);
     
