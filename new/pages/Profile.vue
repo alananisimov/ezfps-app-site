@@ -6,7 +6,7 @@
         <div class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5 ">
             <succesmodal/>
             <errormodal/>
-            <form id="settingsform" @submit.prevent="handleSubmit">
+            <form id="settingsform" @submit.prevent="get_form">
                 <!-- Modal header -->
                 <div class="flex justify-between mb-4 rounded-t sm:mb-5">
                     <div class="text-lg text-gray-900 md:text-xl dark:text-white">
@@ -71,11 +71,11 @@
   let mode = ref('')
   const supabase = useSupabaseClient()
   async function get_form(event){
-
+    event.preventDefault();
     const formDataObj = {};
-    formDataObj["mode"] = mode.value
-    formDataObj["dota_path"] = dota_path.value
-    formDataObj["cs_path"] = cs_path.value
+    formDataObj["mode"] = mode.value;
+    formDataObj["dota_path"] = dota_path.value;
+    formDataObj["cs_path"] = cs_path.value;
     console.log(formDataObj);
     electronAPI.form_submit(formDataObj);
     
