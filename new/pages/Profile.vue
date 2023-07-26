@@ -75,6 +75,9 @@
         
     console.log("form saved to json")
     electronAPI.form_submit(mode.value, dota_path.value, cs_path.value);
+    console.log(mode.value)
+    console.log(dota_path.value)
+    console.log(cs_path.value)
         
       
   }
