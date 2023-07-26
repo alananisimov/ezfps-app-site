@@ -34,7 +34,6 @@
                     </ul>
 </template>
 <script setup>
-let mode = ref('');
 function changemode(new_mode){
     console.log(new_mode);
     mode = new_mode;
