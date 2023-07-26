@@ -37,7 +37,7 @@
                 
               <!-- Mobile menu button -->
             
-            <button onClick="electronAPI.close();">
+            <button @click="close" class="min">
                 <svg class="w-5 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" viewBox="0 0 18 2">
     <path stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
   </svg>
@@ -45,7 +45,7 @@
              <button v-if="session != null" id="btn_log_out" @click="SignOut">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"><path fill="#FFFFFF" d="M5 21q-.825 0-1.413-.588T3 19V5q0-.825.588-1.413T5 3h7v2H5v14h7v2H5Zm11-4l-1.375-1.45l2.55-2.55H9v-2h8.175l-2.55-2.55L16 7l5 5l-5 5Z"/></svg>
              </button>
-                <button onClick="electronAPI.quit();">
+                <button class="exit" @click="quit">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 20 20"><path fill="#FFFFFF" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275q-.275-.275-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7q-.275.275-.7.275t-.7-.275L12 13.4Z"/></svg></button>
             </div>
             </div>
@@ -90,4 +90,13 @@ async function SignOut(){
     { name: 'Sign out', href: '#' },
   ]
 
+  </script>
+  <script>
+  document.querySelector('.exit').addEventListener('click', () => {
+    electronAPI.quit();
+});
+
+document.querySelector('.min').addEventListener('click', () => {
+    electronAPI.minimize();
+});
   </script>
