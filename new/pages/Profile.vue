@@ -68,7 +68,6 @@
   let roleValue = ref('')
   let dota_path = ref('C:/Program Files (x86)/Steam/steamapps/common/dota 2 beta')
   let cs_path = ref('C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive')
-  let mode = ref('')
   const supabase = useSupabaseClient()
   async function get_form(event){
     event.preventDefault();
