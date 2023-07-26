@@ -6,7 +6,7 @@
         <div class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5 ">
             <succesmodal/>
             <errormodal/>
-            <form id="settingsform" @submit.prevent="handleSubmit">
+            <form id="settingsform" @submit="handleSubmit">
                 <!-- Modal header -->
                 <div class="flex justify-between mb-4 rounded-t sm:mb-5">
                     <div class="text-lg text-gray-900 md:text-xl dark:text-white">
@@ -66,7 +66,19 @@
 <script setup>
   let username = ref('')
   let roleValue = ref('')
+  let dota_path = ref('C:/Program Files (x86)/Steam/steamapps/common/dota 2 beta')
+  let cs_path = ref('C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive')
+  let mode = ref('')
   const supabase = useSupabaseClient()
+  const get_form = (event) => {
+    event.preventDefault();
+        
+    console.log("form saved to json")
+    electronAPI.form_submit(mode, dota_path, cs_path);
+        
+      
+  }
+
   const { data: { user } } = await supabase.auth.getUser()
   username = user.user_metadata.name
   let { data: user_role_data, error } = await supabase
