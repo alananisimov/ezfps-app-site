@@ -33,7 +33,7 @@
                         </li>
                     </ul>
 </template>
-<script setup>
+<script>
 export let mode = ref('');
 function changemode(new_mode){
     console.log(new_mode);
