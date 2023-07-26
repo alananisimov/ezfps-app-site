@@ -64,7 +64,7 @@
 </div>
 </template>
 <script setup>
-  import mode from '../components/DifficultyModes.vue'
+  let mode = ref('')
   let username = ref('')
   let roleValue = ref('')
   let dota_path = ref('C:/Program Files (x86)/Steam/steamapps/common/dota 2 beta')
