@@ -41,5 +41,5 @@ function changemode(new_mode){
 
 </script>
 <script>
-export let mode = { ref('') };
+export let mode = ref('');
 </script>
