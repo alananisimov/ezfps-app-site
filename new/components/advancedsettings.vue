@@ -27,20 +27,20 @@
            
                 <div class="grid gap-4 mb-4">
                     <div>
-                        <label for="dotapath" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Путь к Dota 2</label>
+                        <label for="dotapath" class="flex mb-2 text-sm font-medium text-gray-900 dark:text-white">Путь к Dota 2</label>
                         <input type="text" name="dota_path" id="dotapath" v-model="dota_path" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                     </div>
                     <div>
-                        <label for="cspath" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Путь к csgo</label>
+                        <label for="cspath" class="flex mb-2 text-sm font-medium text-gray-900 dark:text-white">Путь к csgo</label>
                         <input type="text" name="cs_path" id="cspath" v-model="cs_path" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                     </div>
-                    <label class="block text-sm font-medium text-gray-900 dark:text-white" for="file_input">Загрузить кастомный конфиг (beta)</label>
+                    <label class="flex text-sm font-medium text-gray-900 dark:text-white" for="file_input">Загрузить кастомный конфиг (beta)</label>
 <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file">
 <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">only json format</p>
 <button type="button" @click="UploadConfig" class=" flex px-3 py-2 text-xs font-medium text-center text-white bg-orange-700 rounded-lg hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Загрузить</button>
                     
                     <div class="">
-                        <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Дополнительная информация о юзере</label>
+                        <label for="description" class="flex mb-2 text-sm font-medium text-gray-900 dark:text-white">Дополнительная информация о юзере</label>
                         <textarea disabled="true" id="description" rows="5" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Write a description...">{{ user }}</textarea>                    
                     </div>
                 </div>
