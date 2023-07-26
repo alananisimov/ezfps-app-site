@@ -35,7 +35,7 @@
 </template>
 <script>
 let mode = ref('');
-const changemode = (new_mode) => {
+function changemode(new_mode){
     console.log(new_mode);
 }
 </script>
