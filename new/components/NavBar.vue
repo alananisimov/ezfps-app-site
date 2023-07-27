@@ -70,7 +70,6 @@ async function SignOut(){
   console.log("signout")
   navigateTo("/signin")
 }
-  const sign_
   const { data: { user } } = await supabase.auth.getUser()
   const user1 = {
     name: 'Tom Cook',
