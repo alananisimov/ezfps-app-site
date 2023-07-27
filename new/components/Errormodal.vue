@@ -11,11 +11,11 @@
                     <svg class="w-8 h-8 text-red-500 dark:text-red-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
   </svg>
-                    <span class="sr-only">Error</span>
+                    <span class="sr-only">Ошибка</span>
                 </div>
-                <p class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">No Subcribtion</p>
+                <p class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Нет подписки</p>
                 <button data-modal-toggle="errorModal" type="button" class="py-2 px-3 text-sm font-medium text-center text-white rounded-lg bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:focus:ring-primary-900">
-                    Continue
+                    Продолжить
                 </button>
             </div>
         </div>
