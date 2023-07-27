@@ -29,7 +29,7 @@
             </ul>
         </div>
     </div>
-    <div class="flex flex-col pb-10 items-center justify-center -mx-64">
+    <div class="flex flex-col pb-10 items-center justify-center px-64">
         <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="/logo.png" alt="Bonnie image"/>
         <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Bonnie Green</h5>
         <span class="text-sm text-gray-500 dark:text-gray-400">Visual Designer</span>
