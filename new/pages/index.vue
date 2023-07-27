@@ -55,14 +55,15 @@
 </template>
 
 <script setup>
-  const supabase = useSupabaseClient()
+const supabase = useSupabaseClient()
 const { data: { user } } = await supabase.auth.getUser()
+let roleValue = ref('')
 let { data: user_role_data, error } = await supabase
   .from('profiles')
   .select('role')
   .eq('email', user.email)
  
-   roleValue = user_role_data[0].role;
+roleValue.value = user_role_data[0].role;
 if(!user) {
   navigateTo("/signin")
 }
