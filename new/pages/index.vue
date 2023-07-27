@@ -29,7 +29,8 @@
             </ul>
         </div>
     </div>
-    <div class="flex flex-col pb-10 items-center justify-center px-64">
+    <div class="flex flex-col pb-10 items-center justify-center">
+      <div class="mx-64">
         <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="/logo.png" alt="Bonnie image"/>
         <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Bonnie Green</h5>
         <span class="text-sm text-gray-500 dark:text-gray-400">Visual Designer</span>
@@ -43,6 +44,7 @@
            <a class="text-xl rounded-full bg-orange-400 px-16 py-4 font-semibold leading-6 text-gray-100 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" id="learn">Начать <span aria-hidden="true">→</span></a>
          </div>
     </div>
+  </div>
 </div>
      <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
        <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ffae00] to-[#ffa500] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" />
