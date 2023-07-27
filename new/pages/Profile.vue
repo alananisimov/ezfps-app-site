@@ -103,7 +103,7 @@
   let cs_path = ref('C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive')
 function changemode(new_mode){
     console.log(new_mode);
-    mode = new_mode;
+    mode.value = new_mode;
 }
   const supabase = useSupabaseClient()
   async function get_form(event){
