@@ -98,6 +98,7 @@
   let roleValue = ref('')
   let dota_path = ref('C:/Program Files (x86)/Steam/steamapps/common/dota 2 beta')
   let cs_path = ref('C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive')
+  const {data: { user }} = await supabase.auth.getSession()
 function changemode(new_mode){
     console.log(new_mode);
     mode.value = new_mode;
@@ -118,12 +119,12 @@ function changemode(new_mode){
   const start_execute = () => {
   electronAPI.start();
 }
-const {data: { user }} = await supabase.auth.getSession()
+
 if(user){  
   let { data: user_role_data, error } = await supabase
   .from('profiles')
   .select('role')
-  .eq('email', user.session.user.email)
+  .eq('email', user.email)
  
    roleValue = user_role_data[0].role;
    console.log(roleValue)
