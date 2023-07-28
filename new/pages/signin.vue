@@ -56,9 +56,6 @@
   const email = ref('')
   const password = ref('')
   const {data: { session }} = await supabase.auth.getSession()
-  if(session){
-    navigateTo("/");
-  }
   const GoogleOauthLogin = async () =>{
 const { data, error } = await supabase.auth.signInWithOAuth({
   provider: 'google',
