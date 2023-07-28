@@ -70,7 +70,7 @@
 
 <script setup>
 const supabase = useSupabaseClient()
-const { data: { user } } = await supabase.auth.getUser()
+const {data: { user }} = await supabase.auth.getSession().session.user
 let roleValue = ref('')
 if(user){
 let { data: user_role_data, error } = await supabase

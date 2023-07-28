@@ -118,7 +118,7 @@ function changemode(new_mode){
   const start_execute = () => {
   electronAPI.start();
 }
-  const { data: { user } } = await supabase.auth.getUser()
+const {data: { user }} = await supabase.auth.getSession().session.user
 if(user){  
   let { data: user_role_data, error } = await supabase
   .from('profiles')

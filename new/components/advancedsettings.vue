@@ -64,7 +64,7 @@
   let cs_path = ref('C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive')
   let Configfile = ref()
   const supabase = useSupabaseClient()
-  const { data: { user } } = await supabase.auth.getUser()
+  const {data: { user }} = await supabase.auth.getSession().session.user
 
   const UploadConfig = async () => {
 const { data, error } = await supabase

@@ -64,7 +64,7 @@
   import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 
   const supabase = useSupabaseClient()
-  const {data: { session }} = await supabase.auth.getSession()
+  const {data: { session }} = await supabase.auth.getSession().session.user
 async function SignOut(){
   const { error: signout } = await supabase.auth.signOut()
   console.log("signout")
