@@ -98,12 +98,13 @@
   let roleValue = ref('')
   let dota_path = ref('C:/Program Files (x86)/Steam/steamapps/common/dota 2 beta')
   let cs_path = ref('C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive')
-  const {data: { user }} = await supabase.auth.getSession()
+  const supabase = useSupabaseClient()
+  const {data: { user }} = await supabase.auth.getUser()
 function changemode(new_mode){
     console.log(new_mode);
     mode.value = new_mode;
 }
-  const supabase = useSupabaseClient()
+  
   async function get_form(event){
     event.preventDefault();
     const formDataObj = {};
