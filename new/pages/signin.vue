@@ -96,3 +96,10 @@ const { data, error } = await supabase.auth.signInWithOAuth({
     }
   }
   </script>
+<script>
+const supabase = useSupabaseClient()
+const { data: { user } } = await supabase.auth.getUser()
+if(user) {
+  navigateTo("/")
+}
+</script>
