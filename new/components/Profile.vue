@@ -95,7 +95,6 @@
 </template>
 <script setup>
   let mode = ref('')
-  let username = ref('')
   let roleValue = ref('')
   let dota_path = ref('C:/Program Files (x86)/Steam/steamapps/common/dota 2 beta')
   let cs_path = ref('C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive')
@@ -120,7 +119,6 @@ function changemode(new_mode){
   electronAPI.start();
 }
   const { data: { user } } = await supabase.auth.getUser()
-  username = user.user_metadata.name
   let { data: user_role_data, error } = await supabase
   .from('profiles')
   .select('role')
@@ -130,14 +128,6 @@ function changemode(new_mode){
    console.log(roleValue)
    console.log(user.email)
  
-  const updateuser = async () => {
-    
-
-    const { data, error } = await supabase.auth.updateUser({
-    data: { name: username, full_name: username }
-    })
-
-console.log(user.user_metadata.name)
-}
+ 
 
 </script>
