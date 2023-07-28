@@ -118,12 +118,12 @@ function changemode(new_mode){
   const start_execute = () => {
   electronAPI.start();
 }
-const {data: { user }} = await supabase.auth.getSession().session.user
-if(user){  
+const {data: { user }} = await supabase.auth.getSession()
+if(user.session.user){  
   let { data: user_role_data, error } = await supabase
   .from('profiles')
   .select('role')
-  .eq('email', user.email)
+  .eq('email', user.session.user.email)
  
    roleValue = user_role_data[0].role;
    console.log(roleValue)
