@@ -72,14 +72,14 @@
 const supabase = useSupabaseClient()
 const {data: { user }} = await supabase.auth.getSession()
 let roleValue = ref('')
-if(user.session.user){
+if(user){
 let { data: user_role_data, error } = await supabase
   .from('profiles')
   .select('role')
   .eq('email', user.email)
   roleValue.value = user_role_data[0].role;
 }
-if(!user.session.user) {
+if(!user) {
   navigateTo("/signin")
 }
 
