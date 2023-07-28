@@ -77,7 +77,7 @@
                         
                      
                     </div>              
-                    <button v-if="roleValue != 'user' | 'tguser'" type="button" id="successButton" data-modal-toggle="successModal" class="inline-flex items-center text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-900">
+                    <button v-if="roleValue != 'user' | 'tguser'" @click="start_execute"  type="button" id="successButton" data-modal-toggle="successModal" class="inline-flex items-center text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-900">
                         <svg class="w-5 h-5 mr-1.5 -ml-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 10 2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
   </svg>
@@ -118,7 +118,9 @@ function changemode(new_mode){
         
       
   }
-
+  const start_execute = () => {
+  electronAPI.start();
+}
   const { data: { user } } = await supabase.auth.getUser()
   username = user.user_metadata.name
   let { data: user_role_data, error } = await supabase

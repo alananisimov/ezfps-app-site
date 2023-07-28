@@ -55,6 +55,10 @@
   const loading = ref(false)
   const email = ref('')
   const password = ref('')
+  const {data: { session }} = await supabase.auth.getSession()
+  if(session){
+    navigateTo("/");
+  }
   const GoogleOauthLogin = async () =>{
 const { data, error } = await supabase.auth.signInWithOAuth({
   provider: 'google',
@@ -62,8 +66,6 @@ const { data, error } = await supabase.auth.signInWithOAuth({
         redirectTo: "https://launcher.ezfps.store/",
       }
 })
-const { data: sessiondata, error: sessionerror } = await supabase.auth.refreshSession()
-const { session, user } = data
   }
   const GithubOauthLogin = async () =>{
     
@@ -96,4 +98,3 @@ const { session, user } = data
     }
   }
   </script>
-  
