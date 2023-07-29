@@ -56,7 +56,10 @@
   const email = ref('')
   const password = ref('')
   const GoogleOauthLogin = async () =>{
-  
+    const { data: { user } } = supabase.auth.getUser()
+if(user) {
+  navigateTo("/")
+}
 const { data, error } = await supabase.auth.signInWithOAuth({
   provider: 'google',
   options: {
@@ -96,10 +99,3 @@ const { data, error } = await supabase.auth.signInWithOAuth({
     }
   }
   </script>
-<script>
-const supabase = useSupabaseClient()
-const { data: { user } } = supabase.auth.getUser()
-if(user) {
-  navigateTo("/")
-}
-</script>
