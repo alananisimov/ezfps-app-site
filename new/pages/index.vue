@@ -23,7 +23,7 @@
                 <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Статус: {{ roleValue }}</a>
             </li>
             <li>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Версия: </a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Версия: {{ app_version }}</a>
             </li>
             <li>
                 <a href="#" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</a>
@@ -72,6 +72,7 @@
 const supabase = useSupabaseClient()
 const { data: { user } } = await supabase.auth.getUser()
 let roleValue = ref('')
+const app_version = ref('')
 if(user){
 let { data: user_role_data, error } = await supabase
   .from('profiles')
@@ -83,6 +84,7 @@ if(!user) {
   navigateTo("/signin")
 }
 
+app_version = electronAPI.get_version();
 
 const start_execute = () => {
   electronAPI.start();
