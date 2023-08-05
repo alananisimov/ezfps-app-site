@@ -84,7 +84,7 @@ if(!user) {
   navigateTo("/signin")
 }
 
-app_version = electronAPI.get_version();
+app_version = electronAPI.get_version() || null;
 
 const start_execute = () => {
   electronAPI.start();
