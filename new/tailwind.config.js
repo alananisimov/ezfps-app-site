@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./*.{html,js,vue}", "./node_modules/flowbite/**/*.{js,ts}"],
+  content: ["./*.{html,js,vue}", "./node_modules/flowbite/**/*.{js,ts}", './node_modules/preline/dist/*.js'],
   theme: {
     extend: {
       colors: {
@@ -44,7 +44,7 @@ module.exports = {
   ]
     }
   },
-  plugins: [require('@tailwindcss/forms'), require('flowbite/plugin')],
+  plugins: [require('@tailwindcss/forms'), require('flowbite/plugin'), require('preline/plugin')],
   
 }
 

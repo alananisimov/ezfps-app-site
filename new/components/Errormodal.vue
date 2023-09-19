@@ -14,9 +14,13 @@
                     <span class="sr-only">Ошибка</span>
                 </div>
                 <p class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Нет подписки</p>
-                <button data-modal-toggle="errorModal" type="button" class="py-2 px-3 text-sm font-medium text-center text-white rounded-lg bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:focus:ring-primary-900">
+                <button data-modal-toggle="errorModal" type="button" class="shadow-xl inline-flex py-2 px-3 text-sm font-medium text-center text-white rounded-lg bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:focus:ring-primary-900">
                     Продолжить
                 </button>
+                <NuxtLink to="/subscribtion"><button data-modal-toggle="errorModal" type="button" class="ml-5 py-2 px-3 text-sm font-medium text-center text-white rounded-lg bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:focus:ring-primary-900">
+                    Купить подписку
+                </button>
+                </NuxtLink> 
             </div>
         </div>
     </div>

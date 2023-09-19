@@ -37,7 +37,7 @@
                         <label for="terms" class="font-light text-gray-500 dark:text-gray-300">Я принимаю <a class="font-medium text-primary-600 hover:underline dark:text-primary-500" href="#">Правила и соглашения</a></label>
                       </div>
                   </div>
-                  <button type="submit" @click="navigateTo('/')" class="w-full text-white bg-orange-600 hover:bg-orange-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Войти</button>
+                  <button type="submit" class="w-full text-white bg-orange-600 hover:bg-orange-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Войти</button>
                   <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                       Нет аккаунта? <NuxtLink to="/signup"><a class="font-medium text-primary-600 hover:underline dark:text-primary-500">Зарегистрируйтесь</a></NuxtLink>
                   </p>
@@ -55,47 +55,25 @@
   const loading = ref(false)
   const email = ref('')
   const password = ref('')
-  const GoogleOauthLogin = async () =>{
-    const { data: { user } } = supabase.auth.getUser()
-if(user) {
-  navigateTo("/")
-}
-const { data, error } = await supabase.auth.signInWithOAuth({
-  provider: 'google',
-  options: {
-        redirectTo: "https://launcher.ezfps.store/",
-      }
-})
-
-  }
-  const GithubOauthLogin = async () =>{
-    
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'github',
-      options: {
-        redirectTo: "https://launcher.ezfps.store/"
-      }
-    })
-    const { data: sessiondata, error: sessionerror } = await supabase.auth.refreshSession()
-    const { session, user } = data
-      }
+  const user = useSupabaseUser()
   const handleLogin = async () => {
-    try {
-      loading.value = true
-      const { error } = await supabase.auth.signInWithPassword({ 
-        email: email.value, 
-        password: password.value,
-        options: {
+  try {
+    loading.value = true;
+    const { error } = await supabase.auth.signInWithPassword({ 
+      email: email.value, 
+      password: password.value,
+      options: {
         redirectTo: "https://vercel-ivory-nine.vercel.app/",
       }
-       }) 
-      if (error) throw error
-    }
-     catch (error) {
-      newerror.value = true
-      errortext.value = error.error_description || error.message
-    } finally {
-      loading.value = false
-    }
+    });
+    if (error) throw error;
+    await navigateTo('/');
+  } catch (error) {
+    newerror.value = true;
+    errortext.value = error.error_description || error.message;
+  } finally {
+    loading.value = false;
   }
+};
+
   </script>
