@@ -12,13 +12,13 @@ export default defineNuxtConfig({
           href: "https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap",
         },
       ],
-      script: [
-        {
-          src: "/preline/dist/preline.js",
-          body: true,
-          defer: true,
-        },
-      ],
+      // script: [
+      //   {
+      //     src: "/preline/dist/preline.js",
+      //     body: true,
+      //     defer: true,
+      //   },
+      // ],
     },
   },
   build: {
