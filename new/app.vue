@@ -7,9 +7,9 @@
 </template>
 
 
-<script>
+<!-- <script>
 import "preline/dist/preline.js"
-</script>
+</script> -->
 <style>
 ::-webkit-scrollbar {
     display: none;
