@@ -1,5 +1,5 @@
 <template>
-    <div class=" w-full pt-16">
+    <div class=" w-full pt-5">
       <div class="w-full max-w-md rounded-2xl bg-white p-2">
 
         <Disclosure v-slot="{ open }">

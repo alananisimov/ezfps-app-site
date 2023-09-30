@@ -5,11 +5,11 @@
     class="hs-overlay hidden w-full h-full fixed top-0 left-0 z-[60] overflow-x-hidden overflow-y-auto"
   >
     <div
-      class="hs-overlay-open:opacity-100 hs-overlay-open:duration-500 opacity-0 transition-all sm:max-w-xl sm:w-full m-3 sm:mx-auto"
+      class="hs-overlay-open:opacity-100 hs-overlay-open:duration-500 opacity-0 transition-all sm:max-w-xl sm:w-full m-3 sm:mx-auto "
     >
       <!-- Modal content -->
       <div
-        class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5"
+        class="relative p-4 mt-24 bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5"
       >
         <succesmodal />
         <errormodal />
@@ -59,6 +59,7 @@
                   value="easy"
                   class="hidden peer"
                   @click="changemode('easy')"
+                  checked
                 />
                 <label
                   for="easy-option"
@@ -130,7 +131,7 @@
             </ul>
             <advancedsettings />
           </dl>
-          <div class="flex justify-between items-center mt-8">
+          <div class="flex justify-between items-center mt-3">
             <div class="flex items-center space-x-3 sm:space-x-4">
               <button
                 type="submit"

@@ -36,7 +36,13 @@
             <div class="inline-flex items-center space-x-4 text-gray-400" style="-webkit-app-region: no-drag;">
                 
               <!-- Mobile menu button -->
-            
+              <div class="" v-if="session != null">
+                
+
+              </div>
+              <div class="px-5" v-if="session != null">
+                <span class="px-5 border border-gray-500 py-1 rounded-lg">{{ user.email }}</span>
+              </div>
             <button @click="minimize">
                 <svg class="w-5 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" viewBox="0 0 18 2">
     <path stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
@@ -89,7 +95,7 @@ async function SignOut(){
     { name: 'Settings', href: '#' },
     { name: 'Sign out', href: '#' },
   ]
-
+ 
   </script>
   <script>
   const quit = () => {
