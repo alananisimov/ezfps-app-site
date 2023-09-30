@@ -1,98 +1,269 @@
 <template>
   <main>
-     <div class="mx-auto max-w-7xl">
-      
-     <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-160" aria-hidden="true">
-       <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ffa500] to-[#ffae00] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" />
-     </div>
-     <succesmodal/>
-     <errormodal/>
-     <Profile/>
-     <div class="max-w-xl justify-center items-center dark:bg-gray-800 dark:border-gray-700 mx-auto">
-      <div class="hs-dropdown  inline-flex px-4 pt-4">
-        <button id="hs-dropdown-basic" @click="update_version" type="button" class="hs-dropdown-toggle py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-orange-400 text-gray-100 shadow-md align-middle hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-indigo-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
-    App
-    <svg class="hs-dropdown-open:rotate-180 w-2.5 h-2.5 text-gray-600" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2 5L8.16086 10.6869C8.35239 10.8637 8.64761 10.8637 8.83914 10.6869L15 5" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-    </svg>
-  </button>
-        <!-- Dropdown menu -->
-        <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 w-56 hidden z-10 mt-2 min-w-[15rem] bg-white shadow-md rounded-lg p-2 dark:bg-gray-800 dark:border dark:border-gray-700 dark:divide-gray-700" aria-labelledby="hs-dropdown-basic">
-            <ul class="py-2" aria-labelledby="dropdownButton">
-            <li>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Статус: {{ roleValue }}</a>
-            </li>
-            <li>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Версия: {{ app_version }}</a>
-            </li>
-            <li>
-                <a href="#" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</a>
-            </li>
-            </ul>
-        </div>
+    <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-160" aria-hidden="true">
+      <div
+        class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ffa500] to-[#ffae00] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+        style="
+          clip-path: polygon(
+            74.1% 44.1%,
+            100% 61.6%,
+            97.5% 26.9%,
+            85.5% 0.1%,
+            80.7% 2%,
+            72.5% 32.5%,
+            60.2% 62.4%,
+            52.4% 68.1%,
+            47.5% 58.3%,
+            45.2% 34.5%,
+            27.5% 76.7%,
+            0.1% 64.9%,
+            17.9% 100%,
+            27.6% 76.8%,
+            76.1% 97.7%,
+            74.1% 44.1%
+          );
+        " />
     </div>
-    <div class="flex flex-col pb-10 items-center justify-center">
-      
-        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="/profile.png" alt="Bonnie image"/>
-        <h5 v-if="user" class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{{user.email}}</h5>
+    <succesmodal />
+    <errormodal />
+    <Profile />
+    <div class="justify-center items-center h-full">
+      <div class="flex flex-col px-10">
+        <!-- <h5 v-if="user" class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{{user.email}}</h5>
         <span class="text-sm text-gray-500 dark:text-gray-400">{{roleValue.value}}</span>
         <div class="flex mt-4 space-x-3 md:mt-6">
             <a @click="show_config" href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Конфигурации</a>
             <a href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">Уведомления</a>
+        </div> -->
+        <!-- <div class=" ">
+          <div class="w-full px-4">
+            <div class="w-full">
+              <RadioGroup v-model="selected">
+                <RadioGroupLabel class="sr-only">Server size</RadioGroupLabel>
+                <div
+                  class="space-y-2 grid w-full gap-6 grid-cols-3 whitespace-normal"
+                >
+                  <RadioGroupOption
+                    as="template"
+                    v-for="plan in plans"
+                    :key="plan.name"
+                    :value="plan"
+                    v-slot="{ active, checked }"
+                    @click="console.log(selected.mode)"
+                  >
+                    <div
+                      :class="[
+                        active
+                          ? 'ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-orange-300'
+                          : '',
+                        checked
+                          ? 'bg-orange-500 bg-opacity-75 text-white '
+                          : 'bg-white ',
+                      ]"
+                      class="relative flex cursor-pointer rounded-lg px-5 py-4 shadow-md focus:outline-none"
+                    >
+                      <div class="flex w-full items-center justify-between">
+                        <div class="flex items-center">
+                          <div class="text-sm">
+                            <RadioGroupLabel
+                              as="p"
+                              :class="checked ? 'text-white' : 'text-gray-900'"
+                              class="font-medium"
+                            >
+                              {{ plan.name }}
+                            </RadioGroupLabel>
+                            <RadioGroupDescription
+                              as="span"
+                              :class="
+                                checked ? 'text-sky-100' : 'text-gray-500'
+                              "
+                              class=""
+                            >
+                              <span> {{ plan.ram }}/{{ plan.cpus }}</span>
+                              <span aria-hidden="true"> &middot; </span>
+                              <span>{{ plan.disk }}</span>
+                            </RadioGroupDescription>
+                          </div>
+                        </div>
+                        <div v-show="checked" class="shrink-0 text-white">
+                          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none">
+                            <circle
+                              cx="12"
+                              cy="12"
+                              r="12"
+                              fill="#fff"
+                              fill-opacity="0.2"
+                            />
+                            <path
+                              d="M7 13l3 3 7-7"
+                              stroke="#fff"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </RadioGroupOption>
+                </div>
+              </RadioGroup>
+            </div>
+          </div>
+        </div> -->
+        <section class="">
+          <div class="grid max-w-screen-xl px-4  mx-auto lg:gap-8 xl:gap-0 lg:py-16s lg:grid-cols-12">
+            <div class="mr-auto place-self-center lg:col-span-7">
+              <h1
+                class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+                Лучший бустер игр в СНГ</h1>
+              <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Лучший
+                бустер игр для максимальной производительности и удовольствия в играх.</p>
+
+            </div>
+            <div class="hidden mt-5 col-span-5 lg:flex">
+              <video class="w-full" autoplay loop muted>
+                <source src="https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/lina.webm"
+                  type="video/webm">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </section>
+        <div class="absolute bottom-0 mb-10 inline-flex gap-x-6 w-full">
+          <button v-if="(roleValue != 'user') | 'tguser'" type="button" @click="start_execute" id="successButton"
+            data-hs-overlay="#successModal"
+            class="font-bold inline-flex text-xl rounded-2xl items-center text-gray-100 bg-gradient-to-tr from-orange-400 to-yellow-400 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 px-16 py-4 text-center">
+            <img class="h-9 mr-1.5 -ml-10" src="https://img.icons8.com/emoji/48/rocket-emji.png" />
+
+            <span class="">Запуск</span>
+          </button>
+          <button v-else type="button" id="errorButton" data-hs-overlay="#errorModal"
+            class="inline-flex text-xl rounded-2xl items-center text-gray-100 bg-gradient-to-tr from-orange-400 to-yellow-400 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 px-16 py-4 text-center">
+            <img class="h-9 mr-1.5 -ml-10" src="https://img.icons8.com/emoji/48/rocket-emji.png" />
+
+            <span class="">Запуск</span>
+          </button>
+          <button data-hs-overlay="#hs-profile-modal"
+            class="rounded-2xl bg-orange-400 px-8 py-2 text-xl text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+            Настройки
+          </button>
+          <!-- <div class="rounded-2xl bg-orange-400/25 px-8 text-sm font-bold shadow-sm text-gray-700"> -->
+          <div class="inline-flex text-base rounded-2xl text-gray-100 bg-orange-400 px-8 h-18 w-full mr-20">
+            <div class="gap-5 inline-flex" v-if="!boostisloading">
+              <svg fill="#ffff" width="40" heigth="40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"
+                enable-background="new 0 0 52 52" xml:space="preserve" stroke="">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M26,2C12.7,2,2,12.7,2,26s10.7,24,24,24s24-10.7,24-24S39.3,2,26,2z M39.4,20L24.1,35.5 c-0.6,0.6-1.6,0.6-2.2,0L13.5,27c-0.6-0.6-0.6-1.6,0-2.2l2.2-2.2c0.6-0.6,1.6-0.6,2.2,0l4.4,4.5c0.4,0.4,1.1,0.4,1.5,0L35,15.5 c0.6-0.6,1.6-0.6,2.2,0l2.2,2.2C40.1,18.3,40.1,19.3,39.4,20z">
+                  </path>
+                </g>
+              </svg>
+              <div class="flex flex-col pt-2.5">
+                <span class="font-extrabold">Все отлично! Все обновления скачаны</span>
+                <p>
+                  Версия приложения
+                  <span class="font-extrabold">{{ app_version }}</span>
+                </p>
+              </div>
+            </div>
+            <div v-else>
+              <div class="flex justify-between mb-1 w-[40vw] pt-3">
+                <span class="text-base font-medium text-white">Загрузка</span>
+                <span class="text-sm font-medium text-white">{{ loadingvalue }}%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                <div class='bg-red-500 h-2.5 rounded-full' :style="'width: ' + loadingvalue + '%'"></div>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="mt-10 flex items-center justify-center gap-x-6">
-            <button data-hs-overlay="#hs-profile-modal" class="rounded-full hover:animate-spin bg-orange-400 px-2 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="m18.525 9l-1.1-2.4l-2.4-1.1l2.4-1.1l1.1-2.4l1.1 2.4l2.4 1.1l-2.4 1.1l-1.1 2.4Zm2 7l-.8-1.7l-1.7-.8l1.7-.8l.8-1.7l.8 1.7l1.7.8l-1.7.8l-.8 1.7Zm-13 6l-.3-2.35q-.2-.075-.387-.2t-.313-.25l-2.2.95l-2.5-4.35l1.9-1.4v-.8l-1.9-1.4l2.5-4.35l2.2.95q.125-.125.313-.25t.387-.2l.3-2.35h5l.3 2.35q.2.075.388.2t.312.25l2.2-.95l2.5 4.35l-1.9 1.4v.8l1.9 1.4l-2.5 4.35l-2.2-.95q-.125.125-.312.25t-.388.2l-.3 2.35h-5Zm2.5-5q1.25 0 2.125-.875T13.025 14q0-1.25-.875-2.125T10.025 11q-1.25 0-2.125.875T7.025 14q0 1.25.875 2.125t2.125.875Z"/></svg></button>
-           
-           
-           <button v-if="roleValue != 'user' | 'tguser'" type="button" @click="start_execute" id="successButton" data-hs-overlay="#successModal" class="inline-flex text-xl rounded-full items-center text-gray-100 bg-orange-400 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 px-16 py-4 text-center">
-                        <svg class="w-5 h-5 mr-1.5 -ml-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 10 2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-  </svg>
-                        Запуск 
-                    </button>
-                    <button v-else type="button" id="errorButton" data-hs-overlay="#errorModal" class="inline-flex text-xl rounded-full items-center text-gray-100 bg-orange-400 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 px-16 py-4 text-center">
-                        <svg class="w-5 h-5 mr-1.5 -ml-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 10 2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-  </svg>
-                        Запуск 
-                    </button>
-         </div>
-    
-  </div>
-</div>
-    
-   </div>
-   
-   </main>
+      </div>
+    </div>
+  </main>
 </template>
 
 <script setup>
-const supabase = useSupabaseClient()
-const { data: { user } } = await supabase.auth.getUser()
-let roleValue = ref('')
-let app_version = ref('')
+const boostisloading = ref(false)
+const loadingvalue = ref(0)
+const supabase = useSupabaseClient();
+const {
+  data: { user },
+} = await supabase.auth.getUser();
+let roleValue = ref("");
+let app_version = ref("1.0.0");
+import { ref } from "vue";
+import {
+  RadioGroup,
+  RadioGroupLabel,
+  RadioGroupDescription,
+  RadioGroupOption,
+} from "@headlessui/vue";
 
-if(user){
-let { data: user_role_data, error } = await supabase
-  .from('profiles')
-  .select('role')
-  .eq('email', user.email)
+const plans = [
+  {
+    name: "Качество",
+    mode: "easy",
+    ram: "12GB",
+    cpus: "6 CPUs",
+    disk: "160 GB SSD disk",
+  },
+  {
+    name: "Производительность",
+    mode: "medium",
+    ram: "16GB",
+    cpus: "8 CPUs",
+    disk: "512 GB SSD disk",
+  },
+  {
+    name: "Полная оптимизация",
+    mode: "hard",
+    ram: "32GB",
+    cpus: "12 CPUs",
+    disk: "1024 GB SSD disk",
+  },
+];
+
+const selected = ref(plans[0]);
+if (user) {
+  let { data: user_role_data, error } = await supabase
+    .from("profiles")
+    .select("role")
+    .eq("email", user.email);
   roleValue.value = user_role_data[0].role;
 }
-if(!user) {
-  navigateTo("/signin")
+if (!user) {
+  navigateTo("/signin");
 }
+const loading_init = () => {
+  let n1 = loadingvalue.value;
+  let timerId = setInterval(() => {
+    loadingvalue.value = n1;
+    n1 += Math.floor(Math.random() * 15);
+
+    if (loadingvalue.value >= 100) {
+      clearInterval(timerId);
+      loadingvalue.value = 0;
+      boostisloading.value = false;
+    }
+  }, 700);
+};
 
 const update_version = () => {
   app_version.value = electronAPI.get_version();
-  console.log(app_version.value)
-}
+  console.log(app_version.value);
+};
 
 const start_execute = () => {
+  boostisloading.value = true
+  loadingvalue.value = 0
+  loading_init()
   electronAPI.start();
-}
+};
 const show_config = () => {
   electronAPI.show_config();
-}
-
+};
 </script>
