@@ -17,22 +17,22 @@
 <br />
 <!-- UPDATE -->
 <div align="center">
-  <a href="https://github.com/proffapt/PROJECT_NAME">
+  <a href="https://github.com/proffapt/alananisimov">
     <img width="140" alt="image" src="https://user-images.githubusercontent.com/86282911/206632284-cb260f57-c612-4ab5-b92b-2172c341ab23.png">
   </a>
 
-  <h3 align="center">PROJECT_NAME</h3>
+  <h3 align="center">ezfps App Site</h3>
 
   <p align="center">
   <!-- UPDATE -->
-    <i>Project one liner slogan goes here</i>
+    <i>Optimize your pc without problems</i>
     <br />
-    <a href="https://github.com/proffapt/PROJECT_NAME"><strong>Explore the docs »</strong></a>
+    <a href="https://docs.ezfps.store"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/proffapt/PROJECT_NAME/issues">Report Bug</a>
+    <a href="https://github.com/alananisimov/ezfpsAppSite/issues">Report Bug</a>
     ·
-    <a href="https://github.com/proffapt/PROJECT_NAME/issues">Request Feature</a>
+    <a href="https://github.com/alananisimov/ezfpsAppSite/issues">Request Feature</a>
   </p>
 </div>
 
