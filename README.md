@@ -46,7 +46,6 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-- [Usage](#usage)
 - [Contact](#contact)
 - [Acknowledgements](#acknowledgments)
 - [Additional documentation](#additional-documentation)
@@ -115,19 +114,6 @@ _Now that the environment has been set up and configured to properly compile and
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-<!-- USAGE EXAMPLES -->
-## Usage
-<!-- UPDATE -->
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space.
-
-<div align="center">
-  <a href="https://github.com/proffapt/PROJECT_NAME">
-    <img width="80%" alt="image" src="https://user-images.githubusercontent.com/86282911/206632640-40dc440e-5ef3-4893-be48-618f2bd85f37.png">
-  </a>
-</div>
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- CONTACT -->
 ## Contact
