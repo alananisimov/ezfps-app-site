@@ -17,8 +17,8 @@
 <br />
 <!-- UPDATE -->
 <div align="center">
-  <a href="https://github.com/proffapt/alananisimov">
-    <img width="140" alt="image" src="https://user-images.githubusercontent.com/86282911/206632284-cb260f57-c612-4ab5-b92b-2172c341ab23.png">
+  <a href="https://github.com/alananisimov/ezfpsStoreSite">
+    <img width="140" alt="image" src="https://raw.githubusercontent.com/alananisimov/ezfpsAppSite/master/new/public/logo.png">
   </a>
 
   <h3 align="center">ezfps App Site</h3>
