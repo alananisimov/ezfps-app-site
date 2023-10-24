@@ -48,6 +48,7 @@
 </section>
 </template>
   <script setup>
+  
   const supabase = useSupabaseClient()
   const newerror = ref(false)
   const errortext = ref('')
@@ -56,18 +57,22 @@
   const email = ref('')
   const password = ref('')
   const user = useSupabaseUser()
+  watchEffect(() => {
+  if (user.value) {
+    navigateTo('/')
+  }
+})
   const handleLogin = async () => {
   try {
     loading.value = true;
     const { error } = await supabase.auth.signInWithPassword({ 
       email: email.value, 
       password: password.value,
-      options: {
-        redirectTo: "https://vercel-ivory-nine.vercel.app/",
-      }
+    }).then((value) => {
+      console.log(value)
+      window.location.replace("http://localhost:3000")
     });
     if (error) throw error;
-    await navigateTo('/');
   } catch (error) {
     newerror.value = true;
     errortext.value = error.error_description || error.message;

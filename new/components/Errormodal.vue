@@ -7,7 +7,7 @@
                     <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     <span class="sr-only">Close modal</span>
                 </button>
-                <div class="w-12 h-12 rounded-full bg-red-100 dark:bg-red-600 p-2 flex items-center justify-center mx-auto mb-3.5">
+                <div class="w-12 h-12 rounded-full bg-red-100 dark:bg-red-600 p-2 flex items-center justify-center mx-auto mb-5">
                     <svg class="w-8 h-8 text-red-500 dark:text-red-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
   </svg>
@@ -17,10 +17,10 @@
                 <button data-hs-overlay="#errorModal" type="button" class="shadow-xl inline-flex py-2 px-3 text-sm font-medium text-center text-white rounded-lg bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:focus:ring-primary-900">
                     Продолжить
                 </button>
-                <NuxtLink to="/subscribtion"><button data-hs-overlay="#errorModal" type="button" class="ml-5 py-2 px-3 text-sm font-medium text-center text-white rounded-lg bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:focus:ring-primary-900">
+                <a href="https://t.me/ezfps_bot" target="_blank"><button data-hs-overlay="#errorModal" type="button" class="ml-5 py-2 px-3 text-sm font-medium text-center text-white rounded-lg bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:focus:ring-primary-900">
                     Купить подписку
                 </button>
-                </NuxtLink> 
+                </a>
             </div>
         </div>
     </div>

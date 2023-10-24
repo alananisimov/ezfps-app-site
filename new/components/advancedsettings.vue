@@ -1,6 +1,6 @@
 <template>
     <div class=" w-full pt-5">
-      <div class="w-full max-w-md rounded-2xl bg-white p-2">
+      <div class="w-full rounded-2xl bg-white p-2">
 
         <Disclosure v-slot="{ open }">
           <DisclosureButton
@@ -37,7 +37,7 @@
                     <label class="flex text-sm font-medium text-gray-900 dark:text-white" for="file_input">Загрузить кастомный конфиг (beta)</label>
 <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file">
 <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">only json format</p>
-<button type="button" @click="UploadConfig" class=" flex px-3 py-2 text-xs font-medium text-center text-white bg-orange-700 rounded-lg hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Загрузить</button>
+<button type="button" class=" flex px-3 py-2 text-xs font-medium text-center text-white bg-orange-700 rounded-lg hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Загрузить</button>
                     
                     <div class="">
                         <label for="description" class="flex mb-2 text-sm font-medium text-gray-900 dark:text-white">Дополнительная информация о юзере</label>
@@ -57,22 +57,20 @@
     </div>
   </template>
   
-  <script setup>
+  <script setup lang="ts">
   import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
   import { ChevronUpIcon } from '@heroicons/vue/20/solid'
-  let dota_path = ref('C:/Program Files (x86)/Steam/steamapps/common/dota 2 beta')
-  let cs_path = ref('C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive')
-  let Configfile = ref()
+  const props = defineProps({
+    settings: {
+        type: Object as PropType<advSettings>,
+        required: true,
+    }
+})
+  let dota_path = ref(props.settings.dotaPath)
+  let cs_path = ref(props.settings.csPath)
   const supabase = useSupabaseClient()
   const { data: { user } } = await supabase.auth.getUser()
+  import "./types"
+  import { advSettings } from './types';
 
-  const UploadConfig = async () => {
-const { data, error } = await supabase
-  .storage
-  .from('configs')
-  .upload(user.user_metadata.name + '.json', Configfile, {
-    cacheControl: '3600',
-    upsert: false
-  })
-  }
-  </script>
+    </script>

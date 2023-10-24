@@ -1,15 +1,16 @@
 <template>
+  <div class="select-none">
 <NuxtLoadingIndicator color="orange"/>
   <NavBar/>
   <NuxtPage/>
 
-
+</div>  
 </template>
 
 
-<script>
+<!-- <script>
 import "preline/dist/preline.js"
-</script>
+</script> -->
 <style>
 ::-webkit-scrollbar {
     display: none;

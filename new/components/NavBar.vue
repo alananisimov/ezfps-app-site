@@ -8,7 +8,7 @@
       ```
     -->
     <div class="min-h-full ">
-      <Disclosure as="nav" class="bg-[#18191B]" v-slot="{ open }" style="-webkit-app-region: drag">
+      <Disclosure as="nav" class="bg-[#18191B]" style="-webkit-app-region: drag">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="flex h-12 items-center justify-between">
             
@@ -41,7 +41,7 @@
 
               </div>
               <div class="px-5" v-if="session != null">
-                <span class="px-5 border border-gray-500 py-1 rounded-lg">{{ user.email }}</span>
+                <span class="px-5 border border-gray-500 py-1 rounded-sm">{{ session.user.email }}</span>
               </div>
             <button @click="minimize">
                 <svg class="w-5 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" viewBox="0 0 18 2">
@@ -51,7 +51,7 @@
              <button v-if="session != null" id="btn_log_out" @click="SignOut">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"><path fill="#FFFFFF" d="M5 21q-.825 0-1.413-.588T3 19V5q0-.825.588-1.413T5 3h7v2H5v14h7v2H5Zm11-4l-1.375-1.45l2.55-2.55H9v-2h8.175l-2.55-2.55L16 7l5 5l-5 5Z"/></svg>
              </button>
-                <button @click="quit">
+                <button @click="quit" class="cursor-pointer">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 20 20"><path fill="#FFFFFF" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275q-.275-.275-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7q-.275.275-.7.275t-.7-.275L12 13.4Z"/></svg></button>
             </div>
             </div>
@@ -66,17 +66,14 @@
   </template>
   
   <script setup>
-  import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-  import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
-
+  import { Disclosure } from '@headlessui/vue'
   const supabase = useSupabaseClient()
   const {data: { session }} = await supabase.auth.getSession()
 async function SignOut(){
-  const { error: signout } = await supabase.auth.signOut()
+  const {} = await supabase.auth.signOut()
   console.log("signout")
   navigateTo("/signin")
 }
-  const { data: { user } } = await supabase.auth.getUser()
   const user1 = {
     name: 'Tom Cook',
     email: 'tom@example.com',
