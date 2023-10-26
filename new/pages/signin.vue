@@ -70,7 +70,7 @@
       password: password.value,
     }).then((value) => {
       console.log(value)
-      window.location.replace("http://localhost:3000")
+      window.location.replace("https://launcher.ezfps.store")
     });
     if (error) throw error;
   } catch (error) {
