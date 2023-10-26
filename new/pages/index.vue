@@ -214,7 +214,8 @@
                 </p>
               </div>
             </div>
-            <div v-else>
+            <transition name="fade">
+            <div v-if="boostisloading">
               <div class="flex justify-between mb-1 w-[40vw] pt-3">
                 <span class="text-base font-medium text-white">Загрузка</span>
                 <span class="text-sm font-medium text-white">{{
@@ -230,6 +231,7 @@
                 ></div>
               </div>
             </div>
+            </transition>
           </div>
         </div>
       </div>
@@ -238,14 +240,15 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 const boostisloading = ref(false);
 const loadingvalue = ref(0);
+
 const supabase = useSupabaseClient();
 const user = useSupabaseUser()
 let roleValue = ref("");
 let app_version = ref("1.0.0");
 
-import { ref } from "vue";
 
 
 
@@ -284,4 +287,8 @@ const start_execute = () => {
 // const show_config = () => {
 //   electronAPI.show_config();
 // };
+</script>
+<script>
+
+
 </script>

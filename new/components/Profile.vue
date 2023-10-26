@@ -72,8 +72,7 @@
                     />
                     <div class="w-full text-lg font-semibold">Минимальная</div>
                     <div class="w-full text-sm">
-                      Очистка файлов, оптимизация запуска, проверка на
-                      вредоносное ПО.
+                      Очистка файлов, оптимизация запуска.
                     </div>
                   </div>
                 </label>
@@ -123,7 +122,7 @@
                     />
                     <div class="w-full text-lg font-semibold">Сильная</div>
                     <div class="w-full text-sm">
-                      Настройка сервисов, удаление плохих процессов.
+                      Настройка сервисов, полная оптимизация игр
                     </div>
                   </div>
                 </label>
@@ -132,9 +131,10 @@
             <div class=" w-full pt-5">
       <div class="w-full rounded-2xl bg-white p-2">
 
-        <Disclosure v-slot="{ open }">
+        <Disclosure v-slot="{ open = false }">
           <DisclosureButton
             class="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-orange-500 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+            @click="async ()=> await test()"
           >
             <span>Дополнительные настройки</span>
             <ChevronUpIcon
@@ -229,6 +229,12 @@ let dota_path = ref(
 let cs_path = ref(
   "C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive"
 );
+function getCurMode(mode_v){
+  if (mode_v == mode) {
+    return true
+  }
+  return false
+}
 const supabase = useSupabaseClient();
 const {
   data: { user },
@@ -236,6 +242,13 @@ const {
 function changemode(new_mode) {
   console.log(new_mode);
   mode.value = new_mode;
+}
+
+async function test() {
+  let config = await electronAPI.get_config()
+  mode.value = config.mode
+  dota_path.value = config.dota_path
+  cs_path.value = config.cs_path
 }
 
 async function get_form(event) {
@@ -246,6 +259,7 @@ async function get_form(event) {
   formDataObj["cs_path"] = cs_path.value;
   console.log(formDataObj);
   electronAPI.form_submit(formDataObj);
+  await test()
 }
 
 if (user) {

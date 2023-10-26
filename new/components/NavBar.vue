@@ -41,7 +41,7 @@
 
               </div>
               <div class="px-5" v-if="session != null">
-                <span class="px-5 border border-gray-500 py-1 rounded-sm">{{ session.user.email }}</span>
+                <span class="px-5 border-gray-500 py-1 rounded-sm">{{ session.user.email }}</span>
               </div>
             <button @click="minimize">
                 <svg class="w-5 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" viewBox="0 0 18 2">
