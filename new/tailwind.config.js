@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./*.{html,js,vue}", "./node_modules/flowbite/**/*.{js,ts}", 'node_modules/preline/dist/*.js'],
+  content: ["./*.{html,js,vue}", "./node_modules/flowbite/**/*.{js,ts}", 'node_modules/preline/dist/*.js',"./nuxt.config.{js,ts}", "./plugins/**/*.{js,ts}",],
   theme: {
     extend: {
       colors: {

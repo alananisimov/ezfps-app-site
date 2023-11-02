@@ -1,5 +1,21 @@
 <!-- Modal toggle -->
 <template>
+<div v-if="isSuccess" id="toast-success" class="fixed top-16 right-5 flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800 z-[200] border-gray-300 border-2" role="alert">
+    <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+        </svg>
+        <span class="sr-only">Check icon</span>
+    </div>
+    <div class="ml-3 text-sm font-normal">Конфигурация сохранена успешно</div>
+    <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-success" aria-label="Close">
+        <span class="sr-only">Close</span>
+        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+        </svg>
+    </button>
+</div>
+
   <div
     id="hs-profile-modal"
     class="hs-overlay hidden w-full h-full fixed top-0 left-0 z-[60] overflow-x-hidden overflow-y-auto"
@@ -191,6 +207,8 @@
               <button
                 type="submit"
                 class="w-full text-white inline-flex items-center bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm justify-center py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                data-hs-overlay="#hs-profile-modal"
+                @click="showToast()"
               >
                 <svg
                   aria-hidden="true"
@@ -218,48 +236,62 @@
     </div>
   </div>
 </template>
-<script setup>
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
-import { ChevronUpIcon } from '@heroicons/vue/20/solid'
-let mode = ref("easy");
-let roleValue = ref("");
-let dota_path = ref(
-  "C:/Program Files (x86)/Steam/steamapps/common/dota 2 beta"
-);
-let cs_path = ref(
-  "C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive"
-);
-function getCurMode(mode_v){
-  if (mode_v == mode) {
-    return true
-  }
-  return false
+<script setup lang="ts">
+import { ref, onUnmounted } from 'vue';
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
+import { ChevronUpIcon } from '@heroicons/vue/20/solid';
+
+const mode = ref("easy");
+const roleValue = ref("");
+const dota_path = ref("C:/Program Files (x86)/Steam/steamapps/common/dota 2 beta");
+const cs_path = ref("C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive");
+const isSuccess = ref(false);
+
+const hideToast = async () => {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+  isSuccess.value = false;
+};
+
+const showToast = () => {
+  isSuccess.value = true;
+  hideToast();
+};
+
+onUnmounted(() => {
+  isSuccess.value = false;
+});
+
+function getCurMode(mode_v: string) {
+  return mode_v === mode.value;
 }
+
 const supabase = useSupabaseClient();
 const {
   data: { user },
 } = await supabase.auth.getUser();
-function changemode(new_mode) {
+
+function changemode(new_mode: string) {
   console.log(new_mode);
   mode.value = new_mode;
 }
 
 async function test() {
-  let config = await electronAPI.get_config()
-  mode.value = config.mode
-  dota_path.value = config.dota_path
-  cs_path.value = config.cs_path
+  let config = await electronAPI.get_config();
+  mode.value = config.mode;
+  dota_path.value = config.dota_path;
+  cs_path.value = config.cs_path;
 }
 
-async function get_form(event) {
+async function get_form(event: { preventDefault: () => void; }) {
   event.preventDefault();
-  const formDataObj = {};
-  formDataObj["mode"] = mode.value;
-  formDataObj["dota_path"] = dota_path.value;
-  formDataObj["cs_path"] = cs_path.value;
+  const formDataObj = {
+    mode: mode.value,
+    dota_path: dota_path.value,
+    cs_path: cs_path.value,
+  };
   console.log(formDataObj);
   electronAPI.form_submit(formDataObj);
-  await test()
+  await test();
 }
 
 if (user) {
@@ -268,8 +300,14 @@ if (user) {
     .select("role")
     .eq("email", user.email);
 
-  roleValue = user_role_data[0].role;
-  console.log(roleValue);
+  if (user_role_data && user_role_data.length > 0) {
+    roleValue.value = user_role_data[0].role;
+  } else {
+    // Handle the case where user_role_data is null or empty
+    console.warn('User role data not found.');
+  }
+
+  console.log(roleValue.value);
   console.log(user.email);
 }
 </script>

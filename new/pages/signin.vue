@@ -6,7 +6,7 @@
 <div class="ml-3 text-sm font-medium">
   {{ errortext }}
 </div>
-<button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-red-50 text-red-500 rounded-lg focus:ring-2 focus:ring-red-400 p-1.5 hover:bg-red-200 inline-flex h-8 w-8 dark:bg-gray-800 dark:text-red-400 dark:hover:bg-gray-700" @click="emailverification = false" data-dismiss-target="#alert-2" aria-label="Close">
+<button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-red-50 text-red-500 rounded-lg focus:ring-2 focus:ring-red-400 p-1.5 hover:bg-red-200 inline-flex h-8 w-8 dark:bg-gray-800 dark:text-red-400 dark:hover:bg-gray-700" @click="" data-dismiss-target="#alert-2" aria-label="Close">
   <span class="sr-only">Close</span>
   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
 </button>
@@ -31,7 +31,7 @@
                   </div>
                   <div class="flex items-start">
                       <div class="flex items-center h-5">
-                        <input id="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="">
+                        <input id="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required>
                       </div>
                       <div class="ml-3 text-sm">
                         <label for="terms" class="font-light text-gray-500 dark:text-gray-300">Я принимаю <a class="font-medium text-primary-600 hover:underline dark:text-primary-500" href="#">Правила и соглашения</a></label>
@@ -47,38 +47,36 @@
   </div>
 </section>
 </template>
-  <script setup>
-  
-  const supabase = useSupabaseClient()
-  const newerror = ref(false)
-  const errortext = ref('')
-  const confirm_password = ref('')
-  const loading = ref(false)
-  const email = ref('')
-  const password = ref('')
-  const user = useSupabaseUser()
-  watchEffect(() => {
+<script setup lang="ts">
+import { ref, watchEffect } from 'vue';
+const supabase = useSupabaseClient();
+const confirm_password = ref('')
+const newerror = ref(false);
+const errortext = ref('');
+const loading = ref(false);
+const email = ref('');
+const password = ref('');
+const user = useSupabaseUser();
+
+watchEffect(() => {
   if (user.value) {
-    navigateTo('/')
+    navigateTo('/');
   }
-})
-  const handleLogin = async () => {
+});
+
+const handleLogin = async () => {
   try {
     loading.value = true;
-    const { error } = await supabase.auth.signInWithPassword({ 
-      email: email.value, 
+    const { error } = await supabase.auth.signInWithPassword({
+      email: email.value,
       password: password.value,
-    }).then((value) => {
-      console.log(value)
-      window.location.replace("https://launcher.ezfps.store")
     });
     if (error) throw error;
-  } catch (error) {
+  } catch (error: any) {
     newerror.value = true;
     errortext.value = error.error_description || error.message;
   } finally {
     loading.value = false;
   }
 };
-
-  </script>
+</script>
