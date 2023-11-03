@@ -7,6 +7,9 @@
 
 </div>  
 </template>
+<script>
+import "preline/dist/preline.js"
+</script>
 <script setup>
 import { onMounted } from 'vue'
 import { initFlowbite } from 'flowbite'

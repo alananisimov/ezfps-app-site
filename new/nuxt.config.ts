@@ -14,12 +14,13 @@ export default defineNuxtConfig({
         },
         { rel: "icon", type: "image/x-icon", href: "/icon.png" }
       ],
-      script: [
-        {
-          src: '/preline/dist/preline.js',
-          defer: true
-        }
-    ]
+    //   script: [
+    //     {
+    //       src: 'preline/dist/preline.js',
+          
+    //       defer: true
+    //     }
+    // ]
     },
   },
   build: {
