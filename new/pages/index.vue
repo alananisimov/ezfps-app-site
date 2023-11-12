@@ -160,7 +160,7 @@ async function getSubEndTime() {
     if (expirationDate) {
       const end_time = moment(expirationDate, "DD:MM:YYYY");
       const currentDate = moment();
-
+      console.log(end_time)
       if (currentDate.isBefore(end_time)) {
         return true;
       }

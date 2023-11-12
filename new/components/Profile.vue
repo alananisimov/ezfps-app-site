@@ -237,10 +237,34 @@
   </div>
 </template>
 <script setup lang="ts">
+// ЗАМЕНИТЬ EASY MEDIUM HARD НА DOTA CS GO ВЕСЬ ПК
 import { ref, onUnmounted } from 'vue';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 import { ChevronUpIcon } from '@heroicons/vue/20/solid';
-
+import { AppConfig } from './types';
+import {RecognizedBrowser} from 'sniffr'
+const config: AppConfig = {
+        linux: {
+          mode: 'easy',
+          dota_path: '~/.steam/steam/SteamApps/common/dota 2 beta',
+          cs_path: '~/.steam/steam/SteamApps/common/Counter-Strike Global Offensive',
+        },
+        macos: {
+          mode: 'easy',
+          dota_path: '/Users/$USER/Library/Application Support/Steam/steamapps/common/dota 2 beta',
+          cs_path: '/Users/$USER/Library/Application Support/Steam/steamapps/common/Counter-Strike Global Offensive',
+        },
+        windows: {
+          mode: 'easy',
+          dota_path: 'C:/Program Files (x86)/Steam/steamapps/common/dota 2 beta',
+          cs_path: 'C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive',
+        },
+        default: {
+          mode: 'easy',
+          dota_path: 'C:/Program Files (x86)/Steam/steamapps/common/dota 2 beta',
+          cs_path: 'C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive',
+        }
+      };
 const mode = ref("easy");
 const roleValue = ref("");
 const dota_path = ref("C:/Program Files (x86)/Steam/steamapps/common/dota 2 beta");
@@ -274,7 +298,6 @@ function changemode(new_mode: string) {
   console.log(new_mode);
   mode.value = new_mode;
 }
-
 async function test() {
   let config = await electronAPI.get_config();
   mode.value = config.mode;

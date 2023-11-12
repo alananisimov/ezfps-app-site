@@ -36,11 +36,11 @@
             <div class="inline-flex items-center space-x-4 text-gray-400" style="-webkit-app-region: no-drag;">
 
               <!-- Mobile menu button -->
-              <div class="" v-if="session != null">
+              <div class="" v-if="user">
 
 
               </div>
-              <div class="px-5" v-if="session != null">
+              <div class="px-5" v-if="user">
                 <span class="px-5 border-gray-500 py-1 rounded-sm">{{ user.email }}</span>
               </div>
               <button @click="minimize">
@@ -49,7 +49,7 @@
                   <path stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
                 </svg>
               </button>
-              <button v-if="session != null" id="btn_log_out" @click="SignOut">
+              <button v-if="user" id="btn_log_out" @click="SignOut">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
                   <path fill="#FFFFFF"
                     d="M5 21q-.825 0-1.413-.588T3 19V5q0-.825.588-1.413T5 3h7v2H5v14h7v2H5Zm11-4l-1.375-1.45l2.55-2.55H9v-2h8.175l-2.55-2.55L16 7l5 5l-5 5Z" />
@@ -87,7 +87,9 @@ async function SignOut() {
   console.log("signout");
   navigateTo("/signin");
 }
-
+supabase.auth.onAuthStateChange((e)=>{
+  console.log(e)
+})
 </script>
 <script>
 

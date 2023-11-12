@@ -7,14 +7,14 @@
 
 </div>  
 </template>
-<script>
+<!-- <script>
 import "preline/dist/preline.js"
-</script>
+</script> -->
 <script setup>
 import { onMounted } from 'vue'
 import { initFlowbite } from 'flowbite'
 useSeoMeta({
-  title: 'ezfps Launcher',
+  title: 'ezfps Launcher', 
   ogTitle: 'ezfps Launcher',
   description: 'Give your pc god`s power',
   ogDescription: 'Give your pc god`s power',
