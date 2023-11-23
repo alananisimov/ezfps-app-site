@@ -11,7 +11,7 @@ This site is used to display the interface in the electron application.
 
 ## Documentation
 
-[Documentation (not working yet)](https://linktodocumentation)
+[Documentation (not working yet)](https://docs.ezfps.store)
 
 
 ## Screenshots
